@@ -22,3 +22,4 @@ runs:
         ls -al
         cd wolfictl-setup-gha
         make wolfictl
+        mv wolfictl /usr/bin/
