@@ -1,0 +1,22 @@
+name: wolfictl-lint
+# inputs:
+#   repository:
+#     default: ${{ github.repository }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@main
+      with:
+        repository: ${{ github.repository }}
+        # ref: ${{ inputs.ref }}
+        # token: ${{ inputs.token }}
+        path: wolfictl-setup-gha
+    - uses: actions/setup-go@v3
+      with:
+        go-version: 1.19
+    - id: build
+      shell: bash
+      run: |
+        set -x
+        cd wolfictl-setup-gha
+        make wolfictl
