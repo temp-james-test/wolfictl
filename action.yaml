@@ -23,4 +23,4 @@ runs:
         echo $PATH
         cd wolfictl-setup-gha
         make wolfictl
-        mv wolfictl /home/runner/.local/bin/
+        mv wolfictl /home/runner/go/bin/
