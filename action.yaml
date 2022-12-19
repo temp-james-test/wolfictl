@@ -21,6 +21,6 @@ runs:
         set -x
         ls -al
         echo $PATH
-        # cd wolfictl-setup-gha
-        # make wolfictl
-        # mv wolfictl /usr/bin/
+        cd wolfictl-setup-gha
+        make wolfictl
+        mv wolfictl /home/runner/.local/bin/
