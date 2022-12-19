@@ -1,13 +1,14 @@
 name: wolfictl-lint
-inputs:
-  repository:
-    default: ${{ github.repository }}
+# inputs:
+#   repository:
+#     default: ${{ github.repository }}
 runs:
   using: composite
   steps:
     - uses: actions/checkout@main
       with:
-        repository: ${{ github.repository }}
+        repository: wolfictl
+        # repository: ${{ github.repository }}
         # ref: ${{ inputs.ref }}
         # token: ${{ inputs.token }}
         path: wolfictl-setup-gha
@@ -18,5 +19,6 @@ runs:
       shell: bash
       run: |
         set -x
+        ls -al
         cd wolfictl-setup-gha
         make wolfictl
